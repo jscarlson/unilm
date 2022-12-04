@@ -67,7 +67,7 @@ def textline_evaluation(
 
 
 @register_scorer("customcer", dataclass=FairseqDataclass)
-class CERScorer(BaseScorer):
+class CustomCERScorer(BaseScorer):
     def __init__(self, cfg):
         super().__init__(cfg)
         self.refs = []
