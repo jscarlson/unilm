@@ -63,7 +63,7 @@ def textline_evaluation(
     else:
         cer = edit_count / n_chars
 
-    return accuracy, cer
+    return cer
 
 
 @register_scorer("customcer", dataclass=FairseqDataclass)
