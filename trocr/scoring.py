@@ -87,7 +87,7 @@ class CustomCERScorer(BaseScorer):
         )
 
     def result_string(self) -> str:
-        return f"Custom CER: {self.score():.2f}"
+        return f"Custom CER: {self.score():.5f}"
 
 
 @register_scorer("cer", dataclass=FairseqDataclass)
