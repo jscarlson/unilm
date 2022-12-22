@@ -497,6 +497,8 @@ class TrOCREncoder(FairseqEncoder):
             pretrained = False
         else:
             pretrained = True
+
+        self.fp16 = args.fp16
         
         if 'custom_size' in args.deit_arch:
             self.deit = create_model(args.deit_arch, pretrained=pretrained, img_size=args.input_size, ape=args.ape, mask_ratio=args.mask_ratio, fp16fixed=self.fp16)
