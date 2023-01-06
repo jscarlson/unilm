@@ -80,7 +80,7 @@ class CustomCERScorer(BaseScorer):
     def score(self):
         return textline_evaluation(
             list(zip(self.refs, self.preds)),
-            print_incorrect=False, 
+            print_incorrect=True, 
             no_spaces_in_eval=False, 
             norm_edit_distance=False, 
             uncased=True
