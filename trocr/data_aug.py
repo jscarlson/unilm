@@ -144,6 +144,7 @@ def build_data_aug(size, mode, resnet=False, resizepad=False):
     else:
         resize_tfm = transforms.Resize(size, interpolation=InterpolationMode.BICUBIC)
     if mode == 'train':
+        print("**** Augmenting!!! ****")
         return transforms.Compose([
             WeightedRandomChoice([
                 # transforms.RandomHorizontalFlip(p=1),
