@@ -132,6 +132,7 @@ class TextRecognitionTask(LegacyFairseqTask):
             input_size = (input_size, input_size)
 
         logger.info('The input size is {}, the height is {} and the width is {}'.format(input_size, input_size[0], input_size[1]))
+        logger.info(f'The preprocessing is: {self.args.preprocess}')
 
         if self.args.preprocess == 'DA2':            
             tfm = build_data_aug(input_size, mode=split)     
