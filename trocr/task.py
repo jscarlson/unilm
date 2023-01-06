@@ -135,7 +135,9 @@ class TextRecognitionTask(LegacyFairseqTask):
         logger.info(f'The preprocessing is: {self.args.preprocess}')
 
         if self.args.preprocess == 'DA2':            
-            tfm = build_data_aug(input_size, mode=split)     
+            tfm = build_data_aug(input_size, mode=split)
+        elif self.args.preprocess == 'NoPreproc':            
+            tfm = build_data_aug(input_size, mode="test")         
         elif self.args.preprocess == 'RandAugment':
             opt = OptForDataAugment(eval= (split != 'train'), isrand_aug=True, imgW=input_size[1], imgH=input_size[0], intact_prob=0.5, augs_num=3, augs_mag=None)
             tfm = DataAugment(opt)
