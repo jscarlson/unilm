@@ -78,13 +78,15 @@ class CustomCERScorer(BaseScorer):
         self.preds.append(pred)
     
     def score(self):
-        return textline_evaluation(
+        scores = textline_evaluation(
             list(zip(self.refs, self.preds)),
             print_incorrect=True, 
             no_spaces_in_eval=False, 
             norm_edit_distance=False, 
             uncased=True
         )
+        print(scores)
+        return scores
 
     def result_string(self) -> str:
         return f"Custom CER: {self.score():.5f}"
