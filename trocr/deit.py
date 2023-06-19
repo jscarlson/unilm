@@ -89,7 +89,7 @@ class AdaptedVisionTransformer(VisionTransformer):
                 attn_drop=attn_drop_rate, drop_path=dpr[i], norm_layer=norm_layer, act_layer=act_layer)
             for i in range(depth)])
     
-        self.init_weights(weight_init)
+        self._init_weights(weight_init)
 
     def forward_features(self, x):
         _, _, H, W = x.shape
