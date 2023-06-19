@@ -88,7 +88,7 @@ class TextRecognitionTask(LegacyFairseqTask):
                 target_dict = Dictionary.load(args.dict_path_or_url)      
         elif getattr(args, "decoder_pretrained", None) is not None:
             if args.decoder_pretrained == 'unilm':            
-                url = 'https://layoutlm.blob.core.windows.net/trocr/dictionaries/unilm3.dict.txt'
+                url = 'https://layoutlm.blob.core.windows.net/trocr/dictionaries/unilm3.dict.txt?sv=2022-11-02&ss=b&srt=o&sp=r&se=2033-06-08T16:48:15Z&st=2023-06-08T08:48:15Z&spr=https&sig=a9VXrihTzbWyVfaIDlIT1Z0FoR1073VB0RLQUMuudD4%3D'
                 logger.info('Load unilm dictionary from {}'.format(url))            
                 dict_content = urllib.request.urlopen(url).read().decode()
                 dict_file_like = io.StringIO(dict_content)
