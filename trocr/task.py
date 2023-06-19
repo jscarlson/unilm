@@ -94,7 +94,7 @@ class TextRecognitionTask(LegacyFairseqTask):
                 dict_file_like = io.StringIO(dict_content)
                 target_dict = Dictionary.load(dict_file_like)
             elif args.decoder_pretrained.startswith('roberta'):
-                url = 'https://layoutlm.blob.core.windows.net/trocr/dictionaries/gpt2_with_mask.dict.txt'
+                url = 'https://layoutlm.blob.core.windows.net/trocr/dictionaries/gpt2_with_mask.dict.txt?sv=2022-11-02&ss=b&srt=o&sp=r&se=2033-06-08T16:48:15Z&st=2023-06-08T08:48:15Z&spr=https&sig=a9VXrihTzbWyVfaIDlIT1Z0FoR1073VB0RLQUMuudD4%3D'
                 logger.info('Load gpt2 dictionary from {}'.format(url))            
                 dict_content = urllib.request.urlopen(url).read().decode()
                 # with open("./gpt2.dict.txt") as f: dict_content = f.read()
